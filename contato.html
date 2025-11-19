@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Notícias Agora: Seu portal de notícias interativo, confiável e em tempo real. Fique por dentro de tudo!"
+    />
+    <meta
+      name="keywords"
+      content="notícias, portal, interativo, tecnologia, brasil, mundo, agora"
+    />
+    <title>Notícias Agora | Página Inicial</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="img/logo.png" alt="Logo Notícias Agora" />
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="noticia.html">Notícias</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="section-contato">
+        <div class="container">
+          <h2>
+            Entre em contato para ficar ligado nas noticias a todo momento
+          </h2>
+          <p class="section-subtitle">
+            Preencha o formulário para entrar em contato conosco para ficar
+            sabendo de todas as novidades e atualizações do nosso portal de
+            notícias.
+          </p>
+
+          <div class="contato-duas-colunas">
+            <div class="form-container">
+              <form id="agendamento-form">
+                <label for="nome">Nome Completo</label>
+                <input
+                  type="text"
+                  id="nome"
+                  name="nome"
+                  required
+                  placeholder="Seu nome"
+                />
+
+                <label for="email">E-mail</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="email@exemplo.com"
+                />
+
+                <label for="telefone">Telefone (WhatsApp)</label>
+                <input
+                  type="tel"
+                  id="telefone"
+                  name="telefone"
+                  required
+                  placeholder="(XX) XXXXX-XXXX"
+                />
+                <button type="submit" class="submit-button">
+                  Entrar em Contato
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2025 Notícias Agora. Todos os direitos reservados.</p>
+      <nav>
+        <a href="#">Política de Privacidade</a> |
+        <a href="contato.html">Contato</a>
+      </nav>
+    </footer>
+  </body>
+</html>

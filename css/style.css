@@ -502,3 +502,165 @@ main article dd {
   background-color: var(--verde-escuro);
   color: var(--branco-fundo);
 }
+
+.social-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 2rem;
+  background-color: var(--branco-fundo);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* 10.1. Cabeçalho (Avatar e Info) */
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-info {
+  line-height: 1.2;
+}
+
+.username {
+  font-weight: bold;
+  color: var(--preto-texto);
+}
+
+.verified {
+  color: var(--verde-claro);
+  font-size: 1.1em;
+  margin-left: 3px;
+}
+
+.handle {
+  color: #657786;
+  font-size: 0.9em;
+}
+
+.close-icon {
+  position: absolute;
+  right: 0;
+  font-size: 1.2rem;
+  color: #657786;
+  cursor: pointer;
+}
+
+/* 10.2. Texto do Post */
+.post-text {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.post-text strong {
+  color: var(--verde-escuro);
+}
+
+/* 10.3. Vídeo Placeholder */
+.video-container {
+  position: relative;
+  width: 100%;
+  /* Mantém a proporção de 16:9 (ou 9/16 de 100% para altura) */
+  padding-top: 56.25%;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.video-thumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.play-button-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.play-icon {
+  fill: var(--verde-escuro);
+  width: 30px;
+  height: 30px;
+}
+
+.watch-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--preto-texto);
+  color: var(--branco-fundo);
+  padding: 5px 8px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+/* 10.4. Metadados e Ações */
+.post-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #657786;
+  font-size: 0.85em;
+  padding-bottom: 10px;
+}
+
+.post-actions {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.action-item {
+  display: flex;
+  align-items: center;
+  color: #657786;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.action-item:hover {
+  color: var(--verde-claro);
+}
+
+.action-item .icon {
+  margin-right: 5px;
+}
+
+/* 10.5. Rodapé (Respostas) */
+.post-footer {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.post-footer a {
+  color: var(--verde-escuro);
+  font-weight: bold;
+}

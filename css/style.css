@@ -162,84 +162,114 @@ footer a {
     grid-template-columns: 1fr;
   }
 }
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-}
-.contato-duas-colunas {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  align-items: flex-start;
-  flex-wrap: wrap;
+.container-form {
+  width: 90%;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.form-container {
-  max-width: 600px;
-  padding: 30px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  text-align: left;
-  animation-name: fadeInUp;
-  animation-duration: 0.8s;
-  animation-delay: 0.3s;
-  animation-fill-mode: both;
-  flex: 1 1 450px;
+.container-form h1 {
+  font-size: 2rem;
+  color: var(--verde-escuro);
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  color: #555;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Estilização dos elementos do formulário */
+.form-container form {
+  display: flex;
+  flex-direction: column;
 }
 
 .form-container label {
-  display: block;
-  margin-top: 15px;
-  margin-bottom: 5px;
-  font-weight: 700;
-  color: #004d40;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  color: var(--preto-texto);
 }
 
 .form-container input[type="text"],
 .form-container input[type="email"],
 .form-container input[type="tel"],
-.form-container input[type="date"],
-.form-container input[type="number"],
-.form-container select {
-  width: 100%;
+.form-container select,
+.form-container textarea,
+.form-container input[type="file"] {
   padding: 10px;
-  margin-bottom: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1em;
+  border-radius: 4px;
+  font-size: 1rem;
   transition: border-color 0.3s;
 }
 
 .form-container input:focus,
-.form-container select:focus {
-  border-color: #008000;
+.form-container select:focus,
+.form-container textarea:focus {
+  border-color: var(--verde-claro);
   outline: none;
+  box-shadow: 0 0 0 2px rgba(134, 255, 100, 0.5); /* Sombra suave verde */
 }
 
-.submit-button {
-  display: block;
-  width: 100%;
-  margin-top: 20px;
-  padding: 12px;
-  font-size: 1.1em;
-  background-color: #008000;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-  text-decoration: none;
-  text-align: center;
+.form-container textarea {
+  resize: vertical;
 }
+
+/* Estilo para Radio Buttons e Checkbox */
+.radio-group,
+.checkbox-group {
+  margin-top: 1rem;
+  padding: 10px 0;
+  border: none;
+}
+
+.radio-group legend {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: var(--preto-texto);
+}
+
+.radio-group input[type="radio"],
+.checkbox-group input[type="checkbox"] {
+  margin-right: 5px;
+  /* Ajuste visual para alinhamento */
+  vertical-align: middle;
+}
+
+.checkbox-group label {
+  font-weight: normal;
+  display: inline; /* Não quebra linha após o checkbox */
+}
+
+/* Estilo para validação (opcional: realça campos inválidos) */
+.form-container input:invalid:not(:focus):not(:placeholder-shown) {
+  border-color: #ff4d4f; /* Cor vermelha para campo inválido */
+}
+
+/* Botão de Envio */
+.submit-button {
+  background-color: var(--verde-escuro);
+  color: var(--branco-fundo);
+  border: none;
+  padding: 15px 20px;
+  margin-top: 2rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
 .submit-button:hover {
-  background-color: #006400;
-  transform: translateY(-2px);
+  background-color: var(--verde-claro);
+  color: var(--preto-texto);
 }
 .hero-section {
   position: relative;

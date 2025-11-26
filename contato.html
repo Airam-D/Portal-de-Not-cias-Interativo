@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Notícias Agora: Seu portal de notícias interativo, confiável e em tempo real. Fique por dentro de tudo!"
+      content="Entre em contato com o Portal Notícias Agora para dúvidas, sugestões ou parcerias."
     />
     <meta
       name="keywords"
-      content="notícias, portal, interativo, tecnologia, brasil, mundo, agora"
+      content="contato, formulário, portal, notícias, interativo"
     />
-    <title>Notícias Agora | Página Inicial</title>
+    <title>Contato | Notícias Agora</title>
 
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -31,19 +31,19 @@
     </header>
     <main>
       <section class="section-contato">
-        <div class="container">
-          <h2>
-            Entre em contato para ficar ligado nas noticias a todo momento
-          </h2>
+        <div class="container-form">
+          <!-- Título e Subtítulo da Seção -->
+          <h1>Fale Conosco: Estamos Prontos para Ouvir Você</h1>
           <p class="section-subtitle">
-            Preencha o formulário para entrar em contato conosco para ficar
-            sabendo de todas as novidades e atualizações do nosso portal de
-            notícias.
+            Preencha o formulário abaixo para enviar suas dúvidas, sugestões ou
+            solicitações de parceria.
           </p>
 
           <div class="contato-duas-colunas">
             <div class="form-container">
-              <form id="agendamento-form">
+              <!-- ATRIBUTOS METHOD E ACTION SOLICITADOS -->
+              <form id="contato-form" method="post" action="/submit-form">
+                <!-- 1. CAMPOS DE TEXTO E EMAIL (REQUERIDOS E VALIDADO POR EMAIL) -->
                 <label for="nome">Nome Completo</label>
                 <input
                   type="text"
@@ -62,6 +62,7 @@
                   placeholder="email@exemplo.com"
                 />
 
+                <!-- 2. CAMPO TELEFONE (VALIDADO POR REGEX/PATTERN) -->
                 <label for="telefone">Telefone (WhatsApp)</label>
                 <input
                   type="tel"
@@ -69,9 +70,79 @@
                   name="telefone"
                   required
                   placeholder="(XX) XXXXX-XXXX"
+                  pattern="^\(\d{2}\) \d{5}-\d{4}$"
+                  title="Formato de telefone: (XX) XXXXX-XXXX"
                 />
+
+                <!-- 3. CAMPO SELECT (ASSUNTO) -->
+                <label for="assunto">Assunto</label>
+                <select id="assunto" name="assunto" required>
+                  <option value="" disabled selected>
+                    Selecione um assunto
+                  </option>
+                  <option value="duvida">Dúvida Geral</option>
+                  <option value="sugestao">Sugestão de Pauta/Notícia</option>
+                  <option value="parceria">Parceria Comercial</option>
+                  <option value="tecnico">Problema Técnico/Site</option>
+                </select>
+
+                <!-- 4. RADIO BUTTONS (TIPO DE CONTATO) -->
+                <fieldset class="radio-group">
+                  <legend>Preferência de Contato:</legend>
+
+                  <input
+                    type="radio"
+                    id="contato-email"
+                    name="tipo_contato"
+                    value="email"
+                    required
+                  />
+                  <label for="contato-email">E-mail</label>
+
+                  <input
+                    type="radio"
+                    id="contato-telefone"
+                    name="tipo_contato"
+                    value="telefone"
+                  />
+                  <label for="contato-telefone">Telefone</label>
+
+                  <input
+                    type="radio"
+                    id="contato-whatsapp"
+                    name="tipo_contato"
+                    value="whatsapp"
+                  />
+                  <label for="contato-whatsapp">WhatsApp</label>
+                </fieldset>
+
+                <!-- 5. TEXTAREA (MENSAGEM) -->
+                <label for="mensagem">Mensagem</label>
+                <textarea
+                  id="mensagem"
+                  name="mensagem"
+                  rows="6"
+                  required
+                  placeholder="Escreva sua mensagem detalhada aqui..."
+                ></textarea>
+
+                <!-- 6. INPUT TYPE FILE (ANEXO) -->
+                <label for="anexo">Anexar Documento (Opcional)</label>
+                <input type="file" id="anexo" name="anexo" />
+
+                <!-- 7. CHECKBOX (ACEITE DE TERMOS) -->
+                <div class="checkbox-group">
+                  <input type="checkbox" id="termos" name="termos" required />
+                  <label for="termos"
+                    >Eu li e aceito os
+                    <a href="#" target="_blank">Termos de Uso</a> e
+                    <a href="#" target="_blank">Política de Privacidade</a
+                    >.</label
+                  >
+                </div>
+
                 <button type="submit" class="submit-button">
-                  Entrar em Contato
+                  Enviar Mensagem
                 </button>
               </form>
             </div>

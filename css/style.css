@@ -664,3 +664,57 @@ main article dd {
   color: var(--verde-escuro);
   font-weight: bold;
 }
+
+.estatisticas-container {
+  /* Tente usar uma fonte limpa, como a das imagens */
+  font-family: Arial, sans-serif;
+  color: #333333; /* Cor do texto principal */
+  display: flex; /* Coloca as duas caixas lado a lado (opcional) */
+  gap: 40px;
+  flex-wrap: wrap; /* Para quebra de linha em telas pequenas */
+}
+
+/* Estilo para cada seção (Com Neymar / Sem Neymar) */
+.secao-estatistica {
+  padding: 20px;
+}
+
+/* Estilo para o título (Com/Sem Neymar) */
+.secao-estatistica h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333333; /* Ou a cor que preferir */
+  margin-bottom: 15px;
+}
+
+/* Estilo para a lista de estatísticas */
+.lista-estatistica {
+  list-style: none; /* Remove a bolinha padrão */
+  padding-left: 0;
+}
+
+/* Estilo para cada item da lista */
+.lista-estatistica li {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 5px;
+  padding-left: 20px; /* Espaço para a bolinha customizada */
+  position: relative;
+}
+
+/* Criação da bolinha vermelha customizada */
+.lista-estatistica li::before {
+  content: "•"; /* Caractere de bullet point */
+  color: #cc0000; /* Cor vermelha, como nas imagens */
+  font-size: 20px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Estilo para o item de aproveitamento (destacado em negrito) */
+.lista-estatistica .destaque {
+  font-weight: bold;
+  margin-top: 10px; /* Espaço para separação */
+  margin-bottom: 10px;
+}

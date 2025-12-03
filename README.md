@@ -51,7 +51,7 @@ A Sprint 3 foi focada na finalização visual, interativa e técnica do projeto,
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [SEU_LINK_DO_REPOSITORIO]
+    git clone https://github.com/Airam-D/Portal-de-Not-cias-Interativo
     ```
 2.  **Abra os arquivos:**
     Navegue até o diretório do projeto e simplesmente abra o arquivo `index.html` (ou o arquivo principal) em seu navegador web.

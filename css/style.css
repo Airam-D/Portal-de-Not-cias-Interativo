@@ -116,8 +116,8 @@ aside {
 
 .feed-noticias {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  grid-template-columns: 1fr;
+  gap: 20px;
   padding-top: 1rem;
   transition: all 0.5s ease;
 }
@@ -136,6 +136,7 @@ aside {
 .botao-ler-mais:hover {
   box-shadow: 0 0 15px rgba(79, 70, 229, 0.5);
   transform: scale(1.05);
+  color: var(--verde-claro);
 }
 .noticia-recente {
   border: 1px solid #e0e0e0;
@@ -171,13 +172,65 @@ footer a {
   }
 
   nav ul {
+    flex-direction: column;
     margin-top: 10px;
+    width: 100%;
   }
 
-  .feed-noticias {
-    grid-template-columns: 1fr;
+  nav ul li {
+    margin: 5px 0;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 5px 0;
+    font-size: 1.2rem;
+  }
+  nav {
+    width: 100%; 
+    padding: 0 5%;
   }
 }
+
+@media (min-width: 600px) {
+  .feed-noticias {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+@media (min-width: 992px) {
+  .feed-noticias {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
+
+.tabela-responsiva {
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+@media (max-width: 500px) {
+  .container-form {
+    padding: 1rem;
+    margin: 1rem auto;
+    width: 95%;
+  }
+
+  .container-form h1 {
+    font-size: 1.5rem;
+  }
+
+  .submit-button {
+    width: 100%;
+  }
+
+  .form-container input[type="file"] {
+    width: 100%;
+  }
+}
+
 .container-form {
   width: 90%;
   max-width: 600px;
@@ -200,7 +253,6 @@ footer a {
   line-height: 1.5;
 }
 
-/* Estilização dos elementos do formulário */
 .form-container form {
   display: flex;
   flex-direction: column;
@@ -224,6 +276,8 @@ footer a {
   border-radius: 4px;
   font-size: 1rem;
   transition: border-color 0.3s;
+  display: block; 
+  width: 100%;
 }
 
 .form-container input:focus,
@@ -231,14 +285,13 @@ footer a {
 .form-container textarea:focus {
   border-color: var(--verde-claro);
   outline: none;
-  box-shadow: 0 0 0 2px rgba(134, 255, 100, 0.5); /* Sombra suave verde */
+  box-shadow: 0 0 0 2px rgba(134, 255, 100, 0.5);
 }
 
 .form-container textarea {
   resize: vertical;
 }
 
-/* Estilo para Radio Buttons e Checkbox */
 .radio-group,
 .checkbox-group {
   margin-top: 1rem;
@@ -255,21 +308,18 @@ footer a {
 .radio-group input[type="radio"],
 .checkbox-group input[type="checkbox"] {
   margin-right: 5px;
-  /* Ajuste visual para alinhamento */
   vertical-align: middle;
 }
 
 .checkbox-group label {
   font-weight: normal;
-  display: inline; /* Não quebra linha após o checkbox */
+  display: inline;
 }
 
-/* Estilo para validação (opcional: realça campos inválidos) */
 .form-container input:invalid:not(:focus):not(:placeholder-shown) {
-  border-color: #ff4d4f; /* Cor vermelha para campo inválido */
+  border-color: #ff4d4f;
 }
 
-/* Botão de Envio */
 .submit-button {
   background-color: var(--verde-escuro);
   color: var(--branco-fundo);
@@ -368,22 +418,20 @@ footer a {
 }
 
 main article {
-  max-width: 800px; /* Reduz a largura máxima para leitura confortável */
-  margin: 0 auto; /* Centraliza o artigo */
+  max-width: 800px;
+  margin: 0 auto;
   padding-top: 2rem;
 }
 
-/* Título Principal (H1) */
 main article h1 {
   font-size: 2.5rem;
   color: var(--verde-escuro);
   margin-bottom: 0.5rem;
   line-height: 1.2;
-  border-bottom: 2px solid var(--verde-claro); /* Linha de destaque para o título */
+  border-bottom: 2px solid var(--verde-claro);
   padding-bottom: 10px;
 }
 
-/* Subtítulos (H2) */
 main article h2 {
   font-size: 1.5rem;
   color: #555;
@@ -391,14 +439,12 @@ main article h2 {
   margin-bottom: 1.5rem;
 }
 
-/* Informações de Metadados (Data, Autor) */
 main article small {
   display: block;
   color: #888;
   margin-bottom: 2rem;
 }
 
-/* Parágrafos do Artigo */
 main article p {
   font-size: 1.15rem;
   line-height: 1.8;
@@ -407,9 +453,8 @@ main article p {
   text-align: justify;
 }
 
-/* Formatação Especial de Texto */
 main article strong {
-  color: var(--verde-escuro); /* Destaque em negrito com a cor principal */
+  color: var(--verde-escuro);
   font-weight: bold;
 }
 
@@ -418,20 +463,17 @@ main article em {
   font-style: italic;
 }
 
-/* Elementos de Equação/Fórmula */
 main article sub,
 sup {
   font-size: 0.8em;
 }
 
-/* Linha Divisória */
 main article hr {
   border: none;
   border-top: 1px solid #ddd;
   margin: 2rem 0;
 }
 
-/* Imagens (Figure) */
 main article figure {
   margin: 2rem 0;
   text-align: center;
@@ -450,7 +492,6 @@ main article figcaption {
   margin-top: 10px;
 }
 
-/* Tabela de Dados (Table) */
 main article table {
   width: 100%;
   border-collapse: collapse;
@@ -477,15 +518,13 @@ main article thead th {
   font-weight: bold;
 }
 
-/* Efeito Zebra (Opcional, mas melhora a leitura de dados) */
 main article tbody tr:nth-child(even) {
   background-color: #f8f8f8;
 }
 
-/* Lista de Definição (Glossário) */
 main article dl {
   padding: 15px;
-  background-color: #f4fff4; /* Fundo suave com tom de verde */
+  background-color: #f4fff4;
   border-left: 5px solid var(--verde-claro);
   margin: 2rem 0;
 }
@@ -502,7 +541,6 @@ main article dd {
   color: #444;
 }
 
-/* Links de Download e Referências */
 #referencias a[download],
 #referencias a {
   display: inline-block;
@@ -528,7 +566,6 @@ main article dd {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-/* 10.1. Cabeçalho (Avatar e Info) */
 .card-header {
   display: flex;
   align-items: center;
@@ -571,7 +608,6 @@ main article dd {
   cursor: pointer;
 }
 
-/* 10.2. Texto do Post */
 .post-text {
   font-size: 1rem;
   margin-bottom: 15px;
@@ -582,11 +618,9 @@ main article dd {
   color: var(--verde-escuro);
 }
 
-/* 10.3. Vídeo Placeholder */
 .video-container {
   position: relative;
   width: 100%;
-  /* Mantém a proporção de 16:9 (ou 9/16 de 100% para altura) */
   padding-top: 56.25%;
   margin-bottom: 10px;
   border-radius: 8px;
@@ -636,7 +670,6 @@ main article dd {
   font-weight: bold;
 }
 
-/* 10.4. Metadados e Ações */
 .post-meta {
   display: flex;
   justify-content: space-between;
@@ -670,7 +703,6 @@ main article dd {
   margin-right: 5px;
 }
 
-/* 10.5. Rodapé (Respostas) */
 .post-footer {
   text-align: center;
   padding-top: 10px;
@@ -682,55 +714,48 @@ main article dd {
 }
 
 .estatisticas-container {
-  /* Tente usar uma fonte limpa, como a das imagens */
   font-family: Arial, sans-serif;
-  color: #333333; /* Cor do texto principal */
-  display: flex; /* Coloca as duas caixas lado a lado (opcional) */
+  color: #333333;
+  display: flex;
   gap: 40px;
-  flex-wrap: wrap; /* Para quebra de linha em telas pequenas */
+  flex-wrap: wrap;
 }
 
-/* Estilo para cada seção (Com Neymar / Sem Neymar) */
 .secao-estatistica {
   padding: 20px;
 }
 
-/* Estilo para o título (Com/Sem Neymar) */
 .secao-estatistica h2 {
   font-size: 24px;
   font-weight: bold;
-  color: #333333; /* Ou a cor que preferir */
+  color: #333333;
   margin-bottom: 15px;
 }
 
-/* Estilo para a lista de estatísticas */
 .lista-estatistica {
-  list-style: none; /* Remove a bolinha padrão */
+  list-style: none;
   padding-left: 0;
 }
 
-/* Estilo para cada item da lista */
 .lista-estatistica li {
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 5px;
-  padding-left: 20px; /* Espaço para a bolinha customizada */
+  padding-left: 20px;
   position: relative;
 }
 
-/* Criação da bolinha vermelha customizada */
 .lista-estatistica li::before {
-  content: "•"; /* Caractere de bullet point */
-  color: #cc0000; /* Cor vermelha, como nas imagens */
+  content: "•";
+  color: #cc0000;
   font-size: 20px;
   position: absolute;
   left: 0;
   top: 0;
 }
 
-/* Estilo para o item de aproveitamento (destacado em negrito) */
 .lista-estatistica .destaque {
   font-weight: bold;
-  margin-top: 10px; /* Espaço para separação */
+  margin-top: 10px;
   margin-bottom: 10px;
 }
